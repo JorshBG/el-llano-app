@@ -1,6 +1,8 @@
 {
     "private": true,
     "scripts": {
+        "compose": "composer install && composer dumpautoload && npm install",
+        "load-pnpm": "pnpm import && pnpm install",
         "dev": "vite",
         "build": "vite build"
     },
@@ -8,5 +10,8 @@
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.7.2",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "datatables.net": "^1.13.4"
     }
 }
