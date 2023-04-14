@@ -44,13 +44,16 @@
 
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
 
+    @include('partials.navBar')
+    @include('partials.sideBar')
+
     <main class="content">
 
+        @include('partials.menuBar')
 
         <div id="mainContent">
 
-            @yield('content')
-
+            @yield('content', 'none')
 
         </div>
     </main>
