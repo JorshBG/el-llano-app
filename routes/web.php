@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('pages.home');
 });
+
+Route::fallback(function(){
+    return view('pages.errors.404');
+});
