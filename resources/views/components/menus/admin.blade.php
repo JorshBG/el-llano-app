@@ -38,12 +38,12 @@
             <!--     ITEMS DEL DROPDOWN       -->
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/productos"><span
+                <a class="nav-link nav-only-item" wire:click="setName('products')"><span
                         class="sidebar-text">Productos</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/proveedores"><span
+                <a class="nav-link nav-only-item" wire:click="setName('otros')"><span
                         class="sidebar-text">Proveedores</span></a>
             </li>
 
