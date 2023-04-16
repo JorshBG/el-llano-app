@@ -4,9 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Primary Meta Tags -->
-    <title>Dashboard</title>
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="Dashboard">
+    <meta name="title" content="@yield('title') page">
 
     <!-- Favicon -->
     @include('layouts.favicon.default')
@@ -15,18 +15,18 @@
 
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
 
-    @livewireStyles
+    @yield('css_files', '')
 </head>
 
 <body>
 
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
 
-    @livewire('dash-container')
+    @yield('content')
 
     @include('layouts.js.defaults')
 
-    @livewireScripts
+    @yield('js_files', '')
 </body>
 
 </html>
