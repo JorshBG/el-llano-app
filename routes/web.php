@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('pages.home');
+    return view('pages.dashboard');
 });
 
 Route::fallback(function(){

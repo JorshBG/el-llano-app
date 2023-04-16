@@ -1,4 +1,4 @@
-<x-partials.menu-bar parent="Categorias" child="Productos" />
+<x-partials.menu-bar />
 
 <div id="mainContent">
 
