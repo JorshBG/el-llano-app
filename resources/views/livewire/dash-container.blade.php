@@ -4,14 +4,14 @@
     <x-partials.side-bar/>
 
     <main class="content">
-{{--
+
         @component($name_component)
-        @endcomponent --}}
+        @endcomponent
 
 
 
-        @dump($name_component)
-        @dump($checked)
+        {{-- @dump($name_component)
+        @dump($checked) --}}
 
     </main>
 
