@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Forms\SignIn;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    route('signin');
 });
 
 Route::get('/dashboard', function () {
     return view('pages.dashboard');
-});
+})->name('dashboard');
+
+Route::get('/signin', function () {
+    return view('pages.sign-in');
+})->name('signin');
+
+Route::get('/signup', function () {
+    return view('livewire.forms.sign-up');
+})->name('signup');
 
 Route::fallback(function(){
     return view('pages.errors.404');
-});
+})->name('404');
