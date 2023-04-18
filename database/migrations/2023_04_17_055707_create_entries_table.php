@@ -27,16 +27,16 @@ return new class extends Migration
                 ->comment('Fecha de compra');
             $table->dateTime('expiration_date')
                 ->comment('Fecha de caducidad');
-            $table->unsignedBigInteger('product')
+            $table->unsignedBigInteger('product_id')
                 ->comment('Referencia al producto que entra');
-            $table->unsignedBigInteger('store')
+            $table->unsignedBigInteger('store_id')
                 ->comment('Referencia al almacen donde se da la entrada');
             // Llaves foraneas
-            $table->foreign('product', 'fk_entry_products')
+            $table->foreign('product_id', 'fk_entry_products')
                 ->references('id')
                 ->on('products')
                 ->onUpdate('cascade');
-            $table->foreign('store', 'fk_entry_stores')
+            $table->foreign('store_id', 'fk_entry_stores')
                 ->references('id')
                 ->on('stores')
                 ->onUpdate('cascade');

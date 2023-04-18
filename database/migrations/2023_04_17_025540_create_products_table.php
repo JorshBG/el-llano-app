@@ -40,35 +40,35 @@ return new class extends Migration
                 ->default('A')
                 ->comment('Estatus para saber si el registro esta activo en el sistema');
             // Llaves foraneas
-            $table->unsignedBigInteger('buy_unite')
+            $table->unsignedBigInteger('buy_unite_id')
                 ->comment('Referencia hacia la unidad de compra del producto')
                 ->nullable();
-            $table->unsignedBigInteger('sel_unite')
+            $table->unsignedBigInteger('sell_unite_id')
                 ->comment('Referencia hacia la unidad de venta del producto')
                 ->nullable();
-            $table->unsignedBigInteger('category')
+            $table->unsignedBigInteger('category_id')
                 ->comment('Referencia hacia la categoria del producto')
                 ->nullable();
-            $table->unsignedBigInteger('presentation')
+            $table->unsignedBigInteger('presentation_id')
                 ->comment('Referencia hacia la presentacion del producto')
                 ->nullable();
 
-            $table->foreign('buy_unite', 'fk_products_buy_unites')
+            $table->foreign('buy_unite_id', 'fk_products_buy_unites')
                 ->references('id')
                 ->on('buy_unites')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
-            $table->foreign('sel_unite', 'fk_products_sell_unites')
+            $table->foreign('sell_unite_id', 'fk_products_sell_unites')
                 ->references('id')
                 ->on('sell_unites')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
-            $table->foreign('category', 'fk_products_categories')
+            $table->foreign('category_id', 'fk_products_categories')
                 ->references('id')
                 ->on('categories')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
-            $table->foreign('presentation', 'fk_products_presentations')
+            $table->foreign('presentation_id', 'fk_products_presentations')
                 ->references('id')
                 ->on('presentations')
                 ->onDelete('set null')

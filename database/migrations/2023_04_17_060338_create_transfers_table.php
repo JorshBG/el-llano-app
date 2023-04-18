@@ -16,25 +16,25 @@ return new class extends Migration
             $table->integer('amount');
             $table->enum('state', array('Cancelado','Parcial','Rechazado','En proceso','Completo','Pendiente'));
             $table->dateTime('delivery_date');
-            $table->unsignedBigInteger('user_sender');
-            $table->unsignedBigInteger('user_receiver');
-            $table->unsignedBigInteger('store_sender');
-            $table->unsignedBigInteger('store_receiver');
+            $table->unsignedBigInteger('user_sender_id');
+            $table->unsignedBigInteger('user_receiver_id');
+            $table->unsignedBigInteger('store_sender_id');
+            $table->unsignedBigInteger('store_receiver_id');
             $table->timestamps();
             // Llaves foraneas
-            $table->foreign('user_sender', 'fk_transfers_user_sender')
+            $table->foreign('user_sender_id', 'fk_transfers_user_sender')
                 ->references('id')
                 ->on('users')
                 ->onUpdate('cascade');
-            $table->foreign('user_receiver', 'fk_transfers_user_receiver')
+            $table->foreign('user_receiver_id', 'fk_transfers_user_receiver')
                 ->references('id')
                 ->on('users')
                 ->onUpdate('cascade');
-            $table->foreign('store_sender', 'fk_transfers_store_sender')
+            $table->foreign('store_sender_id', 'fk_transfers_store_sender')
                 ->references('id')
                 ->on('stores')
                 ->onUpdate('cascade');
-            $table->foreign('store_receiver', 'fk_transfers_store_receiver')
+            $table->foreign('store_receiver_id', 'fk_transfers_store_receiver')
                 ->references('id')
                 ->on('stores')
                 ->onUpdate('cascade');

@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('store_has_products', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('product')
+            $table->unsignedBigInteger('product_id')
                 ->comment('Referencia hacia el producto');
-            $table->unsignedBigInteger('store')
+            $table->unsignedBigInteger('store_id')
                 ->comment('Referencia hacia el almacen que contiene el producto');
             $table->integer('amount')
                 ->comment('Cantidad de producto actualmente en el almacen');
@@ -24,12 +24,12 @@ return new class extends Migration
                 ->comment('Cantidad minima de producto para el almacen');
 
             // Llaves foraneas
-            $table->foreign('product', 'fk_store_has_products_products')
+            $table->foreign('product_id', 'fk_store_has_products_products')
                 ->references('id')
                 ->on('products')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreign('store', 'fk_store_has_products_stores')
+            $table->foreign('store_id', 'fk_store_has_products_stores')
                 ->references('id')
                 ->on('stores')
                 ->onDelete('cascade')

@@ -18,22 +18,22 @@ return new class extends Migration
             $table->enum('pay_status', array('Sin pago', 'Pago parcial', 'Pagado'));
             $table->enum('status', array('A', 'U'));
             $table->enum('delivery_status', array('Sin entregar', 'Entrega parcial', 'Entregado'));
-            $table->unsignedBigInteger('pay_method')
+            $table->unsignedBigInteger('pay_method_id')
                 ->nullable();
-            $table->unsignedBigInteger('provider');
-            $table->unsignedBigInteger('user');
+            $table->unsignedBigInteger('provider_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
             // Llaves foraneas
-            $table->foreign('pay_method', 'fk_purchase_order_pay_method')
+            $table->foreign('pay_method_id', 'fk_purchase_order_pay_method')
                 ->references('id')
                 ->on('pay_methods')
                 ->onUpdate('cascade')
                 ->onDelete('set null');
-            $table->foreign('provider', 'fk_purchase_order_provider')
+            $table->foreign('provider_id', 'fk_purchase_order_provider')
                 ->references('id')
                 ->on('providers')
                 ->onUpdate('cascade');
-            $table->foreign('user', 'fk_purchase_order_user')
+            $table->foreign('user_id', 'fk_purchase_order_user')
                 ->references('id')
                 ->on('users')
                 ->onUpdate('cascade');

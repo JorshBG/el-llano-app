@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('consumptions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('patient')
+            $table->unsignedBigInteger('patient_id')
                 ->nullable()
                 ->comment('Referencia hacia el paciente');
-            $table->unsignedBigInteger('user')
+            $table->unsignedBigInteger('user_id')
                 ->nullable()
                 ->comment('Referencia hacia el usuario');
             $table->unsignedBigInteger('invoice')
@@ -24,12 +24,12 @@ return new class extends Migration
             $table->timestamps();
 
             // Llaves foraneas
-            $table->foreign('patient', 'fk_consumption_patients')
+            $table->foreign('patient_id', 'fk_consumption_patients')
                 ->references('id')
                 ->on('patients')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
-            $table->foreign('user', 'fk_consumption_users')
+            $table->foreign('user_id', 'fk_consumption_users')
                 ->references('id')
                 ->on('users')
                 ->onDelete('set null')

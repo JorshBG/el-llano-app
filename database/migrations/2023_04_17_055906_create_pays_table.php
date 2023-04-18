@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('pays', function (Blueprint $table) {
             $table->id();
             $table->double('amount', 12, 2);
-            $table->unsignedBigInteger('purchase_order');
+            $table->unsignedBigInteger('purchase_order_id');
             // Llave foranea
-            $table->foreign('purchase_order', 'fk_purchase_order_pays')
+            $table->foreign('purchase_order_id', 'fk_purchase_order_pays')
                 ->references('id')
                 ->on('purchase_orders')
                 ->onUpdate('cascade');

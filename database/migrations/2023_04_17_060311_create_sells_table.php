@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('sells', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pay_method');
-            $table->unsignedBigInteger('user');
+            $table->unsignedBigInteger('pay_method_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
             // Llaves foraneas
-            $table->foreign('pay_method', 'fk_sells_pay_method')
+            $table->foreign('pay_method_id', 'fk_sells_pay_method')
                 ->references('id')
                 ->on('pay_methods')
                 ->onUpdate('cascade');
-            $table->foreign('user', 'fk_sells_user')
+            $table->foreign('user_id', 'fk_sells_user')
                 ->references('id')
                 ->on('users')
                 ->onUpdate('cascade');

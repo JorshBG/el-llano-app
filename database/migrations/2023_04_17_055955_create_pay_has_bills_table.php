@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pay_has_bills', function (Blueprint $table) {
-            $table->unsignedBigInteger('bill');
-            $table->unsignedBigInteger('pay');
+            $table->unsignedBigInteger('bill_id');
+            $table->unsignedBigInteger('pay_id');
             // Llaves foraneas
-            $table->foreign('bill', 'fk_pay_has_bills_bill')
+            $table->foreign('bill_id', 'fk_pay_has_bills_bill')
                 ->references('id')
                 ->on('bills')
                 ->onUpdate('cascade');
-            $table->foreign('pay', 'fk_pay_has_bills_pay')
+            $table->foreign('pay_id', 'fk_pay_has_bills_pay')
                 ->references('id')
                 ->on('pays')
                 ->onUpdate('cascade');

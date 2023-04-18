@@ -25,14 +25,14 @@ return new class extends Migration
                 ->nullable();
             $table->string('password')
                 ->comment('Contraseña del usuario, consulta con un administrador para conocer mas detalles de este campo');
-            $table->unsignedBigInteger('role')
+            $table->unsignedBigInteger('role_id')
                 ->unique()
                 ->nullable()
                 ->comment('Referencia hacia el rol que tiene el usuario del sistema');
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('role', 'fk_user_roles')
+            $table->foreign('role_id', 'fk_user_roles')
                 ->references('id')
                 ->on('roles')
                 ->onDelete('set null')
