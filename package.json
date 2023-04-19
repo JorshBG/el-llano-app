@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "compose": "composer install && composer dumpautoload",
+        "compose": "composer install && composer dumpautoload && php artisan migrate && php artisan migrate:fresh --seed",
         "load-pnpm": "pnpm import && pnpm install",
         "dev": "vite",
         "build": "vite build"
