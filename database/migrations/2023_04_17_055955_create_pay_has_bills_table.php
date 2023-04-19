@@ -24,7 +24,7 @@ return new class extends Migration
                 ->on('pays')
                 ->onUpdate('cascade');
 
-            $table->primary(array('bill', 'pay'), 'pk_pay_has_bills');
+            $table->primary(array('bill_id', 'pay_id'), 'pk_pay_has_bills');
             $table->timestamps();
         });
     }

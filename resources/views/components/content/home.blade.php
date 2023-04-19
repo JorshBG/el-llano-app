@@ -1,4 +1,8 @@
-<x-partials.menu-bar />
+@props([
+    'username' => null
+])
+
+<x-partials.menu-bar :username="$username"/>
 
 <div id="mainContent">
 

@@ -38,12 +38,12 @@
             <!--     ITEMS DEL DROPDOWN       -->
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" wire:click="setName('products')"><span
+                <a class="nav-link nav-only-item" wire:click="setName('categories.products')"><span
                         class="sidebar-text">Productos</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" wire:click="setName('otros')"><span
+                <a class="nav-link nav-only-item" wire:click="setName('categories.providers')"><span
                         class="sidebar-text">Proveedores</span></a>
             </li>
 
@@ -56,23 +56,28 @@
     </li> -->
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/unidad-de-venta"><span
+                <a class="nav-link nav-only-item" wire:click="setName('categories.sell-unites')"><span
                         class="sidebar-text">Unidades de venta</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/unidad-de-compra"><span
+                <a class="nav-link nav-only-item" wire:click="setName('categories.buy-unites')"><span
                         class="sidebar-text">Unidades de compra</span></a>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/categorias"><span
+                <a class="nav-link nav-only-item" wire:click="setName('categories.categories')"><span
                         class="sidebar-text">Categorías</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/almacenes"><span
+                <a class="nav-link nav-only-item" wire:click="setName('categories.presentation')"><span
+                        class="sidebar-text">Presentaciones</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-only-item" wire:click="setName('categories.stores')"><span
                         class="sidebar-text">Almacenes</span></a>
             </li>
 
@@ -105,18 +110,18 @@
             <!--     ITEMS DEL DROPDOWN       -->
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/ordenes-de-compra"><span
+                <a class="nav-link nav-only-item" wire:click="setName('boughts.purchase-orders')"><span
                         class="sidebar-text">Ordenes de pago</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/pagos"><span
+                <a class="nav-link nav-only-item" wire:click="setName('boughts.pays')"><span
                         class="sidebar-text">Pagos</span></a>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/entradas"><span
+                <a class="nav-link nav-only-item" wire:click="setName('administration.entries')"><span
                         class="sidebar-text">Entradas</span></a>
             </li>
 
@@ -150,18 +155,18 @@
             <!--     ITEMS DEL DROPDOWN       -->
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/entradas"><span
+                <a class="nav-link nav-only-item" wire:click="setName('administration.entries')"><span
                         class="sidebar-text">Entradas</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/traspaso"><span
+                <a class="nav-link nav-only-item" wire:click="setName('administration.transfers')"><span
                         class="sidebar-text">Traspaso</span></a>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link nav-only-item" href="/dashboard/views/catalogo/salidas"><span
+                <a class="nav-link nav-only-item" wire:click="setName('administration.outputs')"><span
                         class="sidebar-text">Salidas</span></a>
             </li>
 

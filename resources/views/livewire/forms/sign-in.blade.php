@@ -10,7 +10,7 @@
                             <div class="text-center text-md-center mb-4 mt-md-0">
                                 <h1 class="mb-0 h3">Inicio de sesión</h1>
                             </div>
-                            <form class="mt-4" id="form_sign-in" method="post" action="#">
+                            <form class="mt-4" wire:submit.prevent="save">
                                 @csrf
                                 <!-- Form -->
                                 <div class="form-group mb-4">
@@ -57,8 +57,7 @@
                                     </div>
                                 @else
                                     <div class="d-grid" id="sign-in_btnLogin">
-                                        <button type="button" wire:click="save" class="btn btn-gray-800"
-                                            wire:click="submit">
+                                        <button type="submit" class="btn btn-gray-800">
                                             Iniciar sesión
                                         </button>
                                     </div>

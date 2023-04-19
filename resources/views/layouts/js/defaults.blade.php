@@ -40,9 +40,11 @@
 <script src="{{ asset('js/volt.js') }}"></script>
 
 <!-- Data tables -->
-{{-- <script src="/views/utils/jQuery-3.6.0/jquery-3.6.0.js"></script>
-<script src="/views/utils/DataTables/datatables.js"></script>
-<script src="/views/utils/DataTables/DataTables-1.13.4/js/dataTables.bootstrap5.js"></script> --}}
+<script src="{{ asset('utils/jQuery-3.6.0/jquery-3.6.0.js') }}"></script>
+<script src="{{ asset('utils/DataTables/datatables.js') }}"></script>
+<script src="{{ asset('utils/DataTables/DataTables-1.13.4/js/dataTables.bootstrap5.js') }}"></script>
 
+<script src="{{ asset('js/DTable.js') }}"></script>
 
 <script src="{{ asset('js/app.js') }}"></script>
+

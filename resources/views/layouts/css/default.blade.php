@@ -11,5 +11,5 @@
     <link rel="stylesheet" href="{{ asset('css/el-llano-styles.css') }}">
 
     <!-- Data tables -->
-    {{-- <link rel="stylesheet" href="/views/utils/DataTables/DataTables-1.13.4/css/dataTables.bootstrap5.min.css"> --}}
-    <!-- <link rel="stylesheet" href="/views/utils/DataTables/datatables.css"> -->
+    <link rel="stylesheet" href="{{ asset('utils/DataTables/DataTables-1.13.4/css/dataTables.bootstrap5.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('utils/DataTables/datatables.css') }}"> --}}

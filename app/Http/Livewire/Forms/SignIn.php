@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Forms;
 
 use App\Models\Category;
 use App\Models\Presentation;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
@@ -21,8 +22,13 @@ class SignIn extends Component
         $this->process = true;
         $user = User::where('email', $this->email)->first();
         if($user){
-            if($user->password === $this->password){
-                $this->valid = 1;
+            if(password_verify($this->password, $user->password)){
+                session([
+                    'role' => $user->role,
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email
+                ]);
                 redirect()->route('dashboard');
             } else {
                 $this->valid = 2;

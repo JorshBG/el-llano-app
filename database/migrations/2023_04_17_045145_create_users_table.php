@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string('password')
                 ->comment('Contraseña del usuario, consulta con un administrador para conocer mas detalles de este campo');
             $table->unsignedBigInteger('role_id')
-                ->unique()
                 ->nullable()
                 ->comment('Referencia hacia el rol que tiene el usuario del sistema');
             $table->rememberToken();
@@ -35,7 +34,6 @@ return new class extends Migration
             $table->foreign('role_id', 'fk_user_roles')
                 ->references('id')
                 ->on('roles')
-                ->onDelete('set null')
                 ->onUpdate('cascade');
         });
     }

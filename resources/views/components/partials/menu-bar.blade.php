@@ -1,4 +1,4 @@
-@props(['parent' => null, 'child' => null])
+@props(['parent' => null, 'child' => null, 'username' => null])
 
 <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
     <div class="container-fluid px-0">
@@ -6,7 +6,7 @@
             <div class="d-flex align-items-center">
 
                 @if ($parent !== null)
-                    <x-navs.route-bar :parent="$parent" :child="$child"/>
+                    <x-navs.route-bar :parent="$parent" :child="$child" />
                 @endif
 
             </div>
@@ -15,13 +15,15 @@
             <!-- Navbar links -->
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item dropdown ms-lg-3">
-                    <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         <div class="media d-flex align-items-center">
                             <img class="avatar rounded-circle" alt="Image placeholder"
                                 src="{{ asset('img/team/profile-picture-3.jpg') }}">
                             <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                                <span class="mb-0 font-small fw-bold text-gray-900">{{ $username ?? '' }}</span>
+                                <span class="mb-0 font-small fw-bold text-gray-900">
+                                    {{  $username }}
+                                </span>
                             </div>
                         </div>
                     </a>

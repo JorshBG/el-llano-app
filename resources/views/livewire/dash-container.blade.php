@@ -3,15 +3,9 @@
     <x-partials.nav-bar />
     <x-partials.side-bar/>
 
-    <main class="content">
+    <main class="content" id="main">
 
-        @component($name_component)
-        @endcomponent
-
-
-
-        {{-- @dump($name_component)
-        @dump($checked) --}}
+        @component($name_component, ['username' => $name, 'data' => $data])@endcomponent
 
     </main>
 
